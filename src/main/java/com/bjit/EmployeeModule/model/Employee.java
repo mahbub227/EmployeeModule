@@ -21,6 +21,8 @@ private static final long serialVersionUID = 1L;
 	private Integer employeeId;
 	@Column(unique=true,name="work_mobile")
 	private String workMobile;
+	@Column(name="name")
+	private String name;
 	@Column(name="work_address")
 	private String workaAddress;
 	@Column(name="work_location")
@@ -155,14 +157,23 @@ private static final long serialVersionUID = 1L;
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+	
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", workMobile=" + workMobile + ", workaAddress=" + workaAddress
-				+ ", workLocation=" + workLocation + ", workPhone=" + workPhone + ", department=" + department
-				+ ", jobTitle=" + jobTitle + ", manager=" + manager + ", coach=" + coach + ", nationality="
-				+ nationality + ", identificationNo=" + identificationNo + ", passportNo=" + passportNo + ", bankAcNo="
-				+ bankAcNo + ", gender=" + gender + ", homeAddress=" + homeAddress + ", maritalStatus=" + maritalStatus
-				+ ", dateOfBirth=" + dateOfBirth + ", active=" + active + "]";
+		return "Employee [employeeId=" + employeeId + ", workMobile=" + workMobile + ", name=" + name
+				+ ", workaAddress=" + workaAddress + ", workLocation=" + workLocation + ", workPhone=" + workPhone
+				+ ", department=" + department + ", jobTitle=" + jobTitle + ", manager=" + manager + ", coach=" + coach
+				+ ", nationality=" + nationality + ", identificationNo=" + identificationNo + ", passportNo="
+				+ passportNo + ", bankAcNo=" + bankAcNo + ", gender=" + gender + ", homeAddress=" + homeAddress
+				+ ", maritalStatus=" + maritalStatus + ", dateOfBirth=" + dateOfBirth + ", active=" + active + "]";
 	}
 	
 	
