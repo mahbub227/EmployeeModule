@@ -1,37 +1,38 @@
 package com.bjit.EmployeeModule.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.bjit.EmployeeModule.model.Employee;
 import com.bjit.EmployeeModule.service.EmployeeService;
 
-@RestController
+@Controller
 public class EmployeeController {
 	
 	@Autowired
 	private EmployeeService employeeService;
    
 	
-	@RequestMapping("/")
-	public String show() {
-		return "Hello, Welcome to Employee!";
-	}
+	/*@RequestMapping("/")
+	public String show(Model model) {
+		model.addAttribute("message", "Welcome to Spring");
+		return "home";
+	}*/
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public Employee addEmployee(@RequestBody Employee employee) {
 	    return employeeService.addEmployee(employee);
 	}
 	
-	@RequestMapping("/list")
-	public List<Employee> showEmployeeList() {
-		return employeeService.employeeList();
+	@GetMapping("/")
+	public String showEmployeeList(Model model) {
+		model.addAttribute("employeeList", employeeService.employeeList());
+		return "home";
 	}
 	
 }

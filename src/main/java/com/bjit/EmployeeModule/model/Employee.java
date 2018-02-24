@@ -21,10 +21,14 @@ private static final long serialVersionUID = 1L;
 	private Integer employeeId;
 	@Column(unique=true,name="work_mobile")
 	private String workMobile;
-	@Column(name="name")
-	private String name;
+	@Column(name="employee_name")
+	private String employeeName;
 	@Column(name="work_address")
 	private String workaAddress;
+	@Column(name="work_email")
+	private String workEmail;
+	@Column(name="employee_image")
+	private String employeeImage;
 	@Column(name="work_location")
 	private String workLocation;
 	@Column(unique=true,name="work_phone")
@@ -54,6 +58,28 @@ private static final long serialVersionUID = 1L;
 	}
 	public void setEmployeeId(Integer employeeId) {
 		this.employeeId = employeeId;
+	}
+	
+	
+	
+	public String getWorkEmail() {
+		return workEmail;
+	}
+	public void setWorkEmail(String workEmail) {
+		this.workEmail = workEmail;
+	}
+	public String getEmployeeName() {
+		return employeeName;
+	}
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	public String getEmployeeImage() {
+		return employeeImage;
+	}
+	public void setEmployeeImage(String employeeImage) {
+		this.employeeImage = employeeImage;
 	}
 	public String getWorkMobile() {
 		return workMobile;
@@ -157,24 +183,20 @@ private static final long serialVersionUID = 1L;
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	
+
+
 	
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", workMobile=" + workMobile + ", name=" + name
-				+ ", workaAddress=" + workaAddress + ", workLocation=" + workLocation + ", workPhone=" + workPhone
-				+ ", department=" + department + ", jobTitle=" + jobTitle + ", manager=" + manager + ", coach=" + coach
-				+ ", nationality=" + nationality + ", identificationNo=" + identificationNo + ", passportNo="
-				+ passportNo + ", bankAcNo=" + bankAcNo + ", gender=" + gender + ", homeAddress=" + homeAddress
-				+ ", maritalStatus=" + maritalStatus + ", dateOfBirth=" + dateOfBirth + ", active=" + active + "]";
-	}
+		return "Employee [employeeId=" + employeeId + ", workMobile=" + workMobile + ", employeeName=" + employeeName
+				+ ", workaAddress=" + workaAddress + ", workEmail=" + workEmail + ", employeeImage=" + employeeImage
+				+ ", workLocation=" + workLocation + ", workPhone=" + workPhone + ", department=" + department
+				+ ", jobTitle=" + jobTitle + ", manager=" + manager + ", coach=" + coach + ", nationality="
+				+ nationality + ", identificationNo=" + identificationNo + ", passportNo=" + passportNo + ", bankAcNo="
+				+ bankAcNo + ", gender=" + gender + ", homeAddress=" + homeAddress + ", maritalStatus=" + maritalStatus
+				+ ", dateOfBirth=" + dateOfBirth + ", active=" + active + "]";
+	}	
+	
 	
 	
 	
